@@ -13,11 +13,16 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "id",
         as: "comment",
       });
+      comment.belongsTo(models.user, {
+        foreignKey: "user_id",
+        as: "user",
+      });
     }
   }
   status.init(
     {
       tittle: DataTypes.STRING,
+      user_id: DataTypes.INTEGER,
       description: DataTypes.STRING,
       post: DataTypes.STRING,
     },
