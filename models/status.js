@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "id",
         as: "comment",
       });
-      comment.belongsTo(models.user, {
+      status.belongsTo(models.user, {
         foreignKey: "user_id",
         as: "user",
       });
